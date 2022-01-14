@@ -76,8 +76,8 @@ WL :: brought up having an easy mode, regular tic tac toe, alongside the ultimat
 
 2021-01-15
 --------------------------------------------------------------
-SE :: begin working on UML
-JM :: proof of concept on a normal tic tac toe game (easy mode?)
-WL :: brought up having an easy mode, regular tic tac toe, alongside the ultimate tic tac toe
+SE :: 
+JM :: 
+WL :: 
 ==============================================================
 
