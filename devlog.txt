@@ -42,7 +42,8 @@ wow! oo!...
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-we changed ___ to ___ bc...
+* we changed the printable main board from an array of TicTacToes to an array of
+  arrays bc TicTacToe's limited functionality led to immense pain and difficulty.
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -74,10 +75,16 @@ JM :: proof of concept on a normal tic tac toe game (easy mode?)
 WL :: brought up having an easy mode, regular tic tac toe, alongside the ultimate tic tac toe
 ==============================================================
 
-2021-01-15
+2021-01-16
 --------------------------------------------------------------
-SE :: 
-JM :: 
-WL :: 
+SE :: propro completed
+JM :: printable board
+WL :: idea array of tic tac toes for main board
 ==============================================================
 
+2021-01-18 v3
+--------------------------------------------------------------
+SE :: commented in all plans, for implementation tonight
+JM :: ^^
+WL :: worked on the printing problem
+==============================================================
