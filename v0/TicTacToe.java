@@ -8,7 +8,7 @@ public class TicTacToe{
   public static final String ANSI_GREEN = "\u001B[32m";
   public static final String ANSI_YELLOW = "\u001B[33m";
   public static final String ANSI_BLUE = "\u001B[34m";
-  public static final String ANSI_PURPLE = "\u001B[35m";
+  public static final String ANSI_PINK = "\u001B[35m";
   public static final String ANSI_CYAN = "\u001B[36m";
   public static final String ANSI_WHITE = "\u001B[37m";
 
@@ -60,17 +60,18 @@ public class TicTacToe{
     =============================================*/
   public void playTurn(int idx){
     board[idx] = marker;
+
     if (marker == -2) {
       marker = -1;}
     else {marker = -2;}
   }
 
   /*=============================================
-    boolean winCheck() -- determins whether the game is won or not
+    boolean continue() -- determins whether the game is won or not
     pre: board is initialized
-    post: returns true if game won, and false otherwise
+    post: returns false if game won, and true otherwise
     =============================================*/
-  public boolean winCheck(){
+  public boolean winCheck() {
     if ((board[0] == board[1] && board[1] == board[2]) ||
         (board[3] == board[4] && board[4] == board[5]) ||
         (board[6] == board[7] && board[7] == board[8]) ||
@@ -89,5 +90,6 @@ public class TicTacToe{
 
   public static void main(String[] args) {
     TicTacToe tester = new TicTacToe();
+
   }
 }
