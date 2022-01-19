@@ -31,9 +31,40 @@ public class Ultimate {
   }
 
   public String toString() {
+    String result = "";
+    for (int i = 0; i < 3; i++) {
+      for (int j = 0; j < 3; j++) {
+        result += board[i][j]; 
+      }
+      for (j = 3; j < 6; j++) {
+        result += board[i][j]; 
+      }
+      for (j = 6; j < 9; j++) {
+        result += board[i][j]; 
+      }
+    for (i = 3; i < 6; i++) {
+      for (j = 0; j < 3; j++) {
+        result += board[i][j]; 
+      }
+      for (j = 3; j < 6; j++) {
+        result += board[i][j]; 
+      }
+      for (j = 6; j < 9; j++) {
+        result += board[i][j]; 
+      }
+    for (i = 6; i < 9; i++) {
+      for (j = 0; j < 3; j++) {
+        result += board[i][j]; 
+      }
+      for (j = 3; j < 6; j++) {
+        result += board[i][j]; 
+      }
+      for (j = 6; j < 9; j++) {
+        result += board[i][j]; 
+      }
+      
     /*
     //BAD BAD BAD NEEDS WORK PLS
-    String result = "";
     for (int i = 0; i < 9; i += 1) {
       result += board[i/3+0].row(i%3) + " |";
       result += board[i/3+1].row(i%3) + " |";
@@ -45,7 +76,7 @@ public class Ultimate {
         result += "\n";
       }
     }
-    return result;*/
+    return result;
     //CLEAN UP CLEAN UP EVERYBODY EVERYWHERE
   return (
     translate(board[0][0]) + translate(board[0][1]) + translate(board[0][2]) +
@@ -76,6 +107,7 @@ public class Ultimate {
       translate(board[7][6]) + translate(board[7][7]) + translate(board[7][8]) +
       translate(board[8][6]) + translate(board[8][7]) + translate(board[8][8])
     );
+      */
   }
 
   public boolean playTurn(int i){
