@@ -17,8 +17,15 @@ OBSTACLES OVERCOME
 We originally had an issue with setting square 7,8 to a value.
 It was because of an issue in our brute force toString method.
 
+when a player tries to navigate to a already won board, an issue arises where they have to input twice
+- note* it works, just clunkily
+ -- resolved! just had a doubling of the move in Woo.java
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+when a player tries to navigate to a already won board, an issue arises where they have to input twice
+- note* it works, just clunkily
+
+
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -86,4 +93,11 @@ WL :: Tried implementing for-loop toString method
 SE :: Same as JM
 JM :: Wrote Woo.java to encompass user interface
 WL :: Same as JM
+==============================================================
+
+2021-01-19 v6
+--------------------------------------------------------------
+SE ::
+JM ::
+WL ::
 ==============================================================
