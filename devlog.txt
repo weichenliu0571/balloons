@@ -4,37 +4,21 @@ Josiah Moltz
 Weichen Liu
 pd 6
 ---------------------
-<Project Summary / Working Title>
-
-
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-USAGE:
-* Replace all fields, angle brackets included, with specified info.
-  eg, pd <pd#> --> pd 3
-* Delete this instruction block once all teammates understand usage.
-
-devlog--
-Use keyboard shortcut to jump to end,
- replicate entry template,
- modify appropriately.
-
-zone of reflection--
-Flesh out each category whenever necessary, appropriate.
- Need not be fully filled in until end of project,
- but best done as you go along.
-~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Tic^2+Tac^2+Toe^2-2TicTac-2TicToe+2TacToe
+*or*
+Ultimate TicTacToe
 
 
 /////////// Zone of Reflection \\\\\\\\\\\
 ------------------------------------------
 OBSTACLES OVERCOME
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow we so BOSS bc...
+7 to 8 WHAT HAPPENED!?!?!?!?
+We originally had an issue with setting square 7,8 to a value.
+It was because of an issue in our brute force toString method.
 
 UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-blah blah pesky bug...
-maybe some of these will move into the Obs.Ovrcm section...
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -48,6 +32,7 @@ MID-DEVELOPMENT DESIGN CHANGES
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 tales of wisdom gained...
+Subclasses are nice, but not all the time (the tale of TicTacToe)
 ||||||||||||||||||||||||||||||||||||||||||
 
 
@@ -87,4 +72,18 @@ WL :: idea array of tic tac toes for main board
 SE :: commented in all plans, for implementation tonight
 JM :: ^^
 WL :: worked on the printing problem
+==============================================================
+
+2021-01-18 v4
+--------------------------------------------------------------
+SE :: Same as JM
+JM :: Wrote Ultimate.java to encompass the majority of gameplay
+WL :: Tried implementing for-loop toString method
+==============================================================
+
+2021-01-18 v5
+--------------------------------------------------------------
+SE :: Same as JM
+JM :: Wrote Woo.java to encompass user interface
+WL :: Same as JM
 ==============================================================
