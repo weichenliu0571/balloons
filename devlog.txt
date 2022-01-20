@@ -30,12 +30,13 @@ HOW TO HANDLE TIES
 
 COOL STUFF LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-wow! oo!...
+diff works REALLY well for comparing versions to remember what you changed
 
 MID-DEVELOPMENT DESIGN CHANGES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 * we changed the printable main board from an array of TicTacToes to an array of
   arrays bc TicTacToe's limited functionality led to immense pain and difficulty.
+* wonBoards from array of booleans to ints (see v7 for more)
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -98,7 +99,36 @@ WL :: Same as JM
 
 2021-01-19 v6
 --------------------------------------------------------------
-SE ::
-JM ::
-WL ::
+Added spacing
+redid translate to only print what we are looking at
+SE :: Drove, added spacing, and redid translate to only print what we are looking at
+JM :: Added spacing, and redid translate to only print what we are looking at
+WL :: Added spacing, and redid translate to only print what we are looking at
+==============================================================
+
+2021-01-19 v7
+--------------------------------------------------------------
+SE :: Changed wonBoards from an array of booleans, true if board was won and false otherwise
+      to an array of ints, -1 if won by X, -2 if won by O, 0 if not won
+      Changed translate to print large symbol of board winner
+JM :: Drove, changed wonBoards from an array of booleans, true if board was won and false otherwise
+      to an array of ints, -1 if won by X, -2 if won by O, 0 if not won
+      Changed translate to print large symbol of board winner
+WL :: Changed wonBoards from an array of booleans, true if board was won and false otherwise
+      to an array of ints, -1 if won by X, -2 if won by O, 0 if not won
+      Changed translate to print large symbol of board winner
+==============================================================
+
+2021-01-19 v8
+--------------------------------------------------------------
+SE :: Added isFilled()
+      Added rules
+      Updated playTurn() false condition to detect failure BEFORE selecting next square
+JM :: Drove, added isFilled()
+      Added rules
+      Updated playTurn() false condition to detect failure BEFORE selecting next square
+WL :: Came up with condition where we tie
+      Added isFilled()
+      Added rules
+      Updated playTurn() false condition to detect failure BEFORE selecting next square
 ==============================================================
