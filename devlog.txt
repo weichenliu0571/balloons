@@ -24,6 +24,7 @@ UNRESOLVED ISSUES
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 when a player tries to navigate to a already won board, an issue arises where they have to input twice
 - note* it works, just clunkily
+HOW TO HANDLE TIES
 
 
 
@@ -38,7 +39,7 @@ MID-DEVELOPMENT DESIGN CHANGES
 
 LESSONS LEARNED
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-tales of wisdom gained...
+BRUTE FORCE GETS THE JOB DONE!
 Subclasses are nice, but not all the time (the tale of TicTacToe)
 ||||||||||||||||||||||||||||||||||||||||||
 

@@ -3,7 +3,7 @@ public class Ultimate {
   private int[] wonBoards = new int[9];
 
   private final String O = "\u001B[32mO\u001B[0m";  // O
-  private final String X = "\u001B[36mX\u001b[0m";  // X
+  private final String X = "\u001B[36mX\u001B[0m";  // X
 
   private int nextBoard = -1;
   private int marker = -1;  // -1 is an X, -2 is an O
@@ -13,7 +13,7 @@ public class Ultimate {
       for (int j =0; j < 9; j++){
         board[i][j] = j;
       }
-      wonBoards[i] = false;
+      wonBoards[i] = 0;
     }
   }
 
@@ -31,13 +31,43 @@ public class Ultimate {
   }
 
   public String translate(int i, int j){
-    if (board[i][j] == j && i !=nextBoard){
+    if ( wonBoards[i] == -1) {
+      if (j == 0 || j == 3 || j == 5 || j == 6) {
+        return "  ";
+      }
+      else if (j == 1 || j == 8) {
+        return "\u001B[36m\\ \u001B[0m";
+      }
+      else if (j == 2 || j == 7) {
+        return "\u001B[36m/ \u001B[0m";
+      }
+      else {
+        return " " + X;
+      }
+    }
+    else if ( wonBoards[i] == -2) {
+      if (j == 0 || j == 4 || j == 6) {
+        return "  ";
+      }
+      else if (j == 1 || j == 7) {
+        return "\u001B[32m--\u001B[0m";
+      }
+      else if (j == 2 || j == 8) {
+        return "\u001B[32m- \u001B[0m";
+      }
+      else if (j == 3) {
+        return "\u001B[32m |\u001B[0m";
+      }
+      else {
+        return "\u001B[32m |\u001B[0m";
+      }
+    }
+    else if (board[i][j] == j && i !=nextBoard){
       return "  ";
     }
     else{
         return translate(board[i][j]);
     }
-
   }
 
   public String toString() {
@@ -78,7 +108,7 @@ public class Ultimate {
   public boolean playTurn(int i){
 
     // is this board still in play ( check wonBoards of next Boards)
-    if ( wonBoards[nextBoard] ) {
+    if ( wonBoards[nextBoard] != 0 ) {
     // no player picks local nextBoard
       // ask for new input
       // cut round short, play round w/out changing markers
@@ -140,23 +170,26 @@ public class Ultimate {
       wonBoards[i]= board[i][3];
     }
     else if (board[i][6] == board[i][7] && board[i][7] == board[i][8]){
-
+      wonBoards[i] = board[i][6];
     }
     else if (board[i][0] == board[i][3] && board[i][3] == board[i][6]) {
-      wonBoards[i]= board[i][3];
+      wonBoards[i]= board[i][0];
     }
     else if (board[i][1] == board[i][4] && board[i][4] == board[i][7]) {
-      wonBoards[i]= board[i][3];
+      wonBoards[i]= board[i][1];
     }
     else if (board[i][2] == board[i][5] && board[i][5] == board[i][8]) {
-      wonBoards[i]= board[i][3];
+      wonBoards[i]= board[i][2];
     }
     else if (board[i][0] == board[i][4] && board[i][4] == board[i][8]) {
-      wonBoards[i]= board[i][3];
+      wonBoards[i]= board[i][0];
     }
-    else if (board[i][2] == board[i][4] && board[i][4] == board[i][6])){
-
-    };
+    else if (board[i][2] == board[i][4] && board[i][4] == board[i][6]) {
+      wonBoards[i] = board[i][2];
+    }
+    else {
+      wonBoards[i] = 0;
+    }
     // set local board equivalent in wonBoards to true
   }
 
@@ -175,14 +208,14 @@ public class Ultimate {
 
     */
     return (
-      (wonBoards[0] && wonBoards[1] && wonBoards[2]) ||
-      (wonBoards[3] && wonBoards[4] && wonBoards[5]) ||
-      (wonBoards[6] && wonBoards[7] && wonBoards[8]) ||
-      (wonBoards[0] && wonBoards[3] && wonBoards[6]) ||
-      (wonBoards[1] && wonBoards[4] && wonBoards[7]) ||
-      (wonBoards[2] && wonBoards[5] && wonBoards[8]) ||
-      (wonBoards[0] && wonBoards[4] && wonBoards[8]) ||
-      (wonBoards[2] && wonBoards[4] && wonBoards[6])
+      (wonBoards[0] == wonBoards[1] && wonBoards[1] == wonBoards[2] && wonBoards[0] != 0) ||
+      (wonBoards[3] == wonBoards[4] && wonBoards[4] == wonBoards[5] && wonBoards[3] != 0) ||
+      (wonBoards[6] == wonBoards[7] && wonBoards[7] == wonBoards[8] && wonBoards[6] != 0) ||
+      (wonBoards[0] == wonBoards[3] && wonBoards[3] == wonBoards[6] && wonBoards[0] != 0) ||
+      (wonBoards[1] == wonBoards[4] && wonBoards[4] == wonBoards[7] && wonBoards[1] != 0) ||
+      (wonBoards[2] == wonBoards[5] && wonBoards[5] == wonBoards[8] && wonBoards[2] != 0) ||
+      (wonBoards[0] == wonBoards[4] && wonBoards[4] == wonBoards[8] && wonBoards[0] != 0) ||
+      (wonBoards[2] == wonBoards[4] && wonBoards[4] == wonBoards[6] && wonBoards[2] != 0)
     );
   }
 
