@@ -7,5 +7,5 @@
 * type "git clone git@github.com:weichenliu0571/balloons.git"
 * type "javac *.java"
 * type "java Woo.java"
-* further instruction wil be given in terminal
+* further instruction will be given in terminal
 
