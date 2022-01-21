@@ -14,7 +14,7 @@ public class Ultimate {
   private int nextBoard = -1;
   private int marker = -1;  // -1 is an X, -2 is an O
 
-  public Ultimate() {
+  public Ultimate() { // sets all values in the board to their corresponding #
     for (int i = 0; i < 9; i++) {
       for (int j =0; j < 9; j++){
         board[i][j] = j;
@@ -23,7 +23,7 @@ public class Ultimate {
     }
   }
 
-  public String translate(int i){
+  public String translate(int i){ // turns a numeric marker into and X or O
     if (i == -2){
       return " "+ O;
     }
@@ -36,7 +36,7 @@ public class Ultimate {
 
   }
 
-  public String translate(int i, int j){
+  public String translate(int i, int j){ // chooses what to display and what not to display, e.g. if a board has been won, print a large X.
     if ( wonBoards[i] == -1) {
       if (j == 0 || j == 3 || j == 5 || j == 6) {
         return "  ";
@@ -61,12 +61,10 @@ public class Ultimate {
       else if (j == 2 || j == 8) {
         return "\u001B[32m- \u001B[0m";
       }
-      else if (j == 3) {
+      else{
         return "\u001B[32m |\u001B[0m";
       }
-      else {
-        return "\u001B[32m |\u001B[0m";
-      }
+
     }
     else if (board[i][j] == j && i !=nextBoard){
       return "  ";
@@ -76,8 +74,7 @@ public class Ultimate {
     }
   }
 
-  public String toString() {
-    // MASSIVE BASH!
+  public String toString() { // brute force prints the board very prettily.
     return (
       translate(0,0) + translate(0,1) + translate(0,2) + " |" +
         translate(1,0) + translate(1,1) + translate(1,2) + " |" +
@@ -112,32 +109,20 @@ public class Ultimate {
   }
 
   public boolean playTurn(int i){
-
-    // is this board still in play ( check wonBoards of next Boards)
-    // no player picks local nextBoard
-      // ask for new input
-      // cut round short, play round w/out changing markers
-      // return false
-    // yes - continue as normal
-      // check if placement is unfilled
-      if ( board[nextBoard][i] != i ) {
+      if ( board[nextBoard][i] != i ) {// if location is already filled
         System.out.println("Please pick non occupied cell");
       }
       else {
-        // place marker
-        board[nextBoard][i] = marker; //
-        // winCheck
-        localWinCheck(nextBoard);
-        // set nextBoard
-        nextBoard = i;
-        // set marker again
-        if (marker == -2) {
-          marker = -1;
+        board[nextBoard][i] = marker; // place marker
+        localWinCheck(nextBoard);// winCheck
+        nextBoard = i; // set nextBoard
+        if (marker == -2) {// set marker again
+          marker = -1;//X
         }
         else {
-          marker = -2;
+          marker = -2;//O
         }
-        if ( wonBoards[nextBoard] != 0 || isFilledLocal(nextBoard)) {
+        if ( wonBoards[nextBoard] != 0 || isFilledLocal(nextBoard)) { //tell driver to ask for a new board input
           return false;
         }
     }
@@ -145,13 +130,11 @@ public class Ultimate {
     return true;
   }
 
-  public void setNextBoard( int i ) {
-    // to be used at start of game
+  public void setNextBoard( int i ) {// to be used at start of game
     nextBoard = i;
   }
 
-  public String getMarker() {
-    // returns marker
+  public String getMarker() {// returns marker
     return translate(marker);
   }
 
@@ -184,7 +167,6 @@ public class Ultimate {
     else {
       wonBoards[i] = 0;
     }
-    // set local board equivalent in wonBoards to true
   }
 
   public boolean gameWon(){
@@ -201,7 +183,7 @@ public class Ultimate {
     );
   }
 
-  public boolean isFilledLocal(int i ){
+  public boolean isFilledLocal(int i ){// check for local boards filled-ness
     for (int j = 0; j < 9; j++) {
       if (board[i][j] == j) {
         return false;
@@ -210,7 +192,7 @@ public class Ultimate {
     return true;
   }
 
-  public boolean isFilled() {
+  public boolean isFilled() {// check for main board filled-ness
     for (int i = 0; i < 9; i++) {
       if (wonBoards[i] == 0){
         return false;
@@ -222,7 +204,7 @@ public class Ultimate {
     return true;
   }
 
-  public static void main(String[] args) {
+  public static void main(String[] args) { // tester method
     Ultimate balloons = new Ultimate();
     for (int i = 0; i < 9; i++) {
       balloons.board[i][0] = -1;

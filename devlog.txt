@@ -132,3 +132,10 @@ WL :: Came up with condition where we tie
       Added rules
       Updated playTurn() false condition to detect failure BEFORE selecting next square
 ==============================================================
+
+2021-01-21
+--------------------------------------------------------------
+SE :: added isFilledLocal
+JM :: brough up if a board is filled but no one won ^^
+WL :: brought up the problem of if every board is won, but not in a winning formation. ^^
+==============================================================
