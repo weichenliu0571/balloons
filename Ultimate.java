@@ -1,3 +1,9 @@
+/*
+Balloons - Josiah Moltz, Weichen Liu, Sophia Eiden.
+APCS pd 6
+2022 - 1 - 20
+Final Project - (Tic Tac Toe)^2
+*/
 public class Ultimate {
   private int[][] board = new int[9][9];
   private int[] wonBoards = new int[9];
@@ -131,11 +137,8 @@ public class Ultimate {
         else {
           marker = -2;
         }
-        if ( wonBoards[nextBoard] != 0) {
+        if ( wonBoards[nextBoard] != 0 || isFilledLocal(nextBoard)) {
           return false;
-        }
-        else {
-          return true;
         }
     }
     // return all gucci
@@ -198,12 +201,22 @@ public class Ultimate {
     );
   }
 
+  public boolean isFilledLocal(int i ){
+    for (int j = 0; j < 9; j++) {
+      if (board[i][j] == j) {
+        return false;
+      }
+    }
+    return true;
+  }
+
   public boolean isFilled() {
     for (int i = 0; i < 9; i++) {
-      for (int j = 0; j < 9; j++) {
-        if (board[i][j] == j) {
-          return false;
-        }
+      if (wonBoards[i] == 0){
+        return false;
+      }
+      if (!isFilledLocal(i)){
+        return false;
       }
     }
     return true;
