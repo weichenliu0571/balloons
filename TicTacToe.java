@@ -3,6 +3,8 @@ Balloons - Josiah Moltz, Weichen Liu, Sophia Eiden.
 APCS pd 6
 2022 - 1 - 20
 Final Project - (Tic Tac Toe)^2
+
+Coded for proof of concept
 */
 public class TicTacToe {
   private int[] board = new int[9]; // Board where gameplay takes place
