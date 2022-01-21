@@ -24,7 +24,7 @@ The board is subdivided into 9 local boards as shown
    6   |   7   |   8\
        |       |\
 Each board is subdivided into 9 squares as shown
- 0 1 2 | 0 1 2 | 0 1 2\
+\; 0 1 2 | 0 1 2 | 0 1 2\
  3 4 5 | 3 4 5 | 3 4 5\
  6 7 8 | 6 7 8 | 6 7 8\
 -------+-------+-------\
