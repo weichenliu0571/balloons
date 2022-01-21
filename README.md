@@ -12,6 +12,7 @@
 ## Concise description
 Player X will use Xs as their marker, while Player O will use Os as their marker.\
 The board is subdivided into 9 local boards as shown
+```
        |       |
    0   |   1   |   2
        |       |
@@ -23,6 +24,7 @@ The board is subdivided into 9 local boards as shown
        |       |
    6   |   7   |   8
        |       |
+```
 Each board is subdivided into 9 squares as shown
 ```
  0 1 2 | 0 1 2 | 0 1 2
