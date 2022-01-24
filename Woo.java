@@ -61,13 +61,16 @@ public class Woo {
       }
       catch ( IOException e ) { }
 
+
       if ( !balloons.playTurn( nextPlay ) ) {
+        System.out.println(balloons);
         System.out.println("Player" + balloons.getMarker() + ", this board is no longer in play.");
         System.out.println("Pick a new local board to play in!");
         try {
           balloons.setNextBoard( Integer.parseInt( in.readLine() ) );
         }
         catch ( IOException e ) { }
+
       }
     }
     if (balloons.isFilled()) {
