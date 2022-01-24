@@ -7,7 +7,7 @@
 * type "git clone git@github.com:weichenliu0571/balloons.git"
 * type "javac *.java"
 * type "java Woo.java"
-* further instruction will be given in terminal
+* further instructions will be given in terminal
 
 ## Concise description
 Player X will use Xs as their marker, while Player O will use Os as their marker.\
